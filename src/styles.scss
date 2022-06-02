@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+button {
+  cursor: pointer;
+}
+
+.container {
+  padding: 0 25px;
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .search-container {
+    margin-bottom: 20px;
+    .input-container {
+      padding: 0 15px;
+      position: relative;
+      svg {
+        position: absolute;
+        top: 7px;
+        left: 20px;
+      }
+      input {
+        height: 30px;
+        width: calc(100% - 25px);
+        border-radius: 25px;
+        padding-left: 25px;
+        border: 0.5px solid blue;
+      }
+    }
+  }
+
+  .card-container {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    app-card {
+      margin: 0 auto;
+    }
+  }
+
+  .paginator-container {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    div {
+      max-width: calc(100% - 0px);
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    button {
+      width: 50px;
+      margin: 4px;
+      @media screen and (max-width: 560px) {
+        margin: 3px;
+      }
+    }
+  }
+}
+
+//Page loading
+
+.cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.8;
+}
+
+.waitingMsg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  text-align: center;
+  h4 {
+    color: #fff;
+  }
+  .spinner {
+    margin: 0 auto;
+    border: 4px solid #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: #09f;
+
+    animation: spin 1s ease infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

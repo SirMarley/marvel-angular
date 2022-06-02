@@ -1,0 +1,19 @@
+.nav-container {
+  position: relative;
+  display: flex;
+  a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: unset;
+    outline: none;
+    background: unset;
+    display: flex;
+    flex-direction: column;
+  }
+}

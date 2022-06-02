@@ -1,0 +1,5 @@
+<div class="details-card-cont" [ngClass]="image==''? 'no-picture':''">
+  <img *ngIf="image != ''" src="{{image}}" alt="{{title}}">
+  <h4>{{title}}</h4>
+  <p>{{description}}</p>
+</div>

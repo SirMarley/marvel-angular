@@ -1,0 +1,65 @@
+<app-navbar
+[backLink]="'/home'"
+[textOnArrow]="'List of Heroes'"></app-navbar>
+
+<div class="container" #container>
+
+  <div class="details-container">
+    <div class="main-details">
+      <div class="left">
+        <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="{{hero.name}}">
+      </div>
+      <div class="right">
+        <h2>{{hero.name}}</h2>
+        <p>{{hero.description}}</p>
+      </div>
+    </div>
+    <div class="extra-details">
+      <div class="comics" *ngIf="service.comics.length > 0">
+        <h3>Comics</h3>
+        <div class="search-container">
+          <app-search-details
+          [nameOfList]="'comics'"></app-search-details>
+        </div>
+        <div class="card-container">
+          <app-details-card *ngFor="let comic of service.comics"
+            [title]="comic.title"
+            [description]="comic.description"
+            [image]="comic.picture"
+          ></app-details-card>
+        </div>
+      </div>
+      <div class="series" *ngIf="service.series.length > 0">
+        <h3>Series</h3>
+        <div class="search-container">
+          <app-search-details
+          [nameOfList]="'series'"></app-search-details>
+        </div>
+        <div class="card-container">
+          <app-details-card *ngFor="let serie of service.series"
+            [title]="serie.title"
+            [description]="serie.description"
+            [image]="serie.picture"
+          ></app-details-card>
+        </div>
+      </div>
+      <div class="stories" *ngIf="service.stories.length > 0">
+        <h3>Stories</h3>
+        <div class="search-container">
+          <app-search-details
+          [nameOfList]="'stories'"></app-search-details>
+        </div>
+        <div class="card-container">
+          <app-details-card *ngFor="let storie of service.stories"
+            [title]="storie.title"
+            [description]="storie.description"
+            [image]="storie.picture"
+          ></app-details-card>
+        </div>
+      </div>
+      <div *ngIf="service.comics.length < 1 && service.stories.length < 1 && service.series.length < 1">
+        <h4>Information about this character is classified</h4>
+      </div>
+    </div>
+  </div>
+</div>

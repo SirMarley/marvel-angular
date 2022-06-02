@@ -1,0 +1,27 @@
+.container {
+  margin-top: 35px;
+
+  .details-container {
+    .main-details {
+      display: flex;
+      flex-direction: row;
+      .left {
+        max-width: 300px;
+        padding-right: 30px;
+        img {
+          width: 100%;
+        }
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
+    .extra-details {
+      .card-container {
+        justify-content: center;
+      }
+    }
+  }
+}

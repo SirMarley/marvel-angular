@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+
+<div class="login-container">
+  <div class="welcome">
+    <h2 class="headline-2">Welcome! <br>Please enter a username to access to the page</h2>
+  </div>
+  <div class="form-container">
+    <form action="" (ngSubmit)="loginUser(usr)" #usr="ngForm">
+      <div class="input-container">
+        <label for="username">User</label>
+        <input id="username" type="text" name="username" value="{{user.username}}" [(ngModel)]="user.username"  #username="ngModel" placeholder="User name with no spaces" required (keyup)="loginError = false">
+      </div>
+      <div class="submit-container">
+        <button *ngIf="!loginError" class="cta cta-primary cta-text" type="submit" name="button" [disabled]="usr.invalid">Login</button>
+        <button *ngIf="loginError"  class="cta cta-primary cta-text" type="submit" name="button" disabled>Login</button>
+      </div>
+      <div class="error-container" *ngIf="loginError">
+        {{error}}
+      </div>
+    </form>
+  </div>
+</div>
+
+

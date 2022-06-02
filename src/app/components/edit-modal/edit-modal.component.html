@@ -1,0 +1,31 @@
+<div class="edit-modal">
+  <div class="modal-head">
+    <div class="right">
+      <button (click)="service.editing = false">
+        <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.64258 6.60474L19.4168 19.7409" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.64258 19.7407L19.4168 6.60452" stroke="#D9D9D9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="custom-modal-body">
+    <div class="modal-explanation">
+      You can change the name and description of the Hero
+    </div>
+    <form action="" (ngSubmit)="confirmEdition(hro)" #hro="ngForm">
+      <div class="input-container">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" value="{{superhero.name}}" [(ngModel)]="superhero.name"  #name="ngModel" placeholder="Name of the hero" required maxlength="12">
+      </div>
+      <div class="input-container">
+        <label for="description">Description</label>
+        <textarea id="description" type="text" name="description" value="{{superhero.description}}" [(ngModel)]="superhero.description"  #description="ngModel" placeholder="Hero's description"></textarea>
+      </div>
+      <div class="submit-container">
+        <button class="cta cta-primary cta-text" type="submit" name="button" [disabled]="hro.invalid">Confirm</button>
+        <button (click)="service.editing=false">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
